@@ -1,0 +1,82 @@
+
+  <mat-sidenav-container class="sidenav-container reg">
+    <mat-sidenav  #drawer mode="side" class="sidenav" fixedInViewport="true">
+      <mat-divider></mat-divider>
+      <img style="margin-top:1%" class="logo" src="../../../assets/images/bike logo.png">
+      <span class="vin"></span>
+  
+  
+        <mat-nav-list class="nav-lis" >
+          <div class="nav-item">
+            <a class="nav-link" mat-list-item [routerLink]="['dashboard']" [routerLinkActive]="['is-active']">
+              <mat-icon class="nav-icon">dashboard</mat-icon>
+              DASHBOARD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+          </div>
+        </mat-nav-list>
+        <mat-nav-list class="nav-list">
+          <div class="nav-item">
+            <a class="nav-link" mat-list-item [routerLink]="['about']" [routerLinkActive]="['is-active']">
+              <mat-icon class="nav-icon">dashboard</mat-icon>
+              ABOUT
+            </a>
+          </div>
+        </mat-nav-list>
+        <mat-nav-list class="nav-list">
+          <div class="nav-item">
+            <a class="nav-link" mat-list-item [routerLink]="['contact']" [routerLinkActive]="['is-active']">
+              <mat-icon class="nav-icon">dashboard</mat-icon>
+              CONTACT
+            </a>
+          </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar class="tool">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <!-- <img class="logo" src="../../../assets/images/bike logo.png">&nbsp;&nbsp;&nbsp; -->
+        <span>BIKE LAB</span>
+        <span class="example-spacer"></span>
+      
+        <mat-icon>person</mat-icon>
+        {{name}}&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <mat-icon (click)="logout()" style="cursor:pointer">logout</mat-icon>
+          
+        
+      <!--
+        <button mat-icon-button (click)="logout()">
+          <mat-icon>logout</mat-icon>&nbsp; &nbsp; &nbsp;
+        </button> -->
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menu" >
+      
+          <mat-icon>more_vert</mat-icon>
+      
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="history()">
+            <mat-icon>history</mat-icon>
+            <span style="cursor:pointer;">Users history</span>
+          </button>
+          <button mat-menu-item (click)="reg()" >
+            <mat-icon>motorcycle</mat-icon>
+            <span>bike Register</span>
+          </button>
+          <button mat-menu-item  (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+       -->
+      
+      </mat-toolbar>
+    
+  
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

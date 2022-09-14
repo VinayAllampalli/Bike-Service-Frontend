@@ -1,0 +1,47 @@
+
+.example-spacer {
+    flex: 0.98 1 auto;
+  }
+  .contain{
+    width:35%;
+    margin-top:5%;
+    border:2px solid;
+    border-color:#6CB33F;
+    margin-right: 4%;
+    background-color: rgb(241, 241, 241);
+  }
+  .img{
+    background-image: url('/../assets/images/bike2.jpg');
+    background-size: 1375px 600px;
+  }
+  .ride{
+    background-image: linear-gradient(to right, #314755 0%, #26a0da  0%, #314755  100%);
+    color: white;
+  }
+  .works{
+    margin-top:5%;
+    width:80%;
+    border:2px solid;
+    border-color:#6CB33F;
+  
+  
+  }
+  h1{
+    font-weight: bold;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+      font-size: 2vw;
+      text-align: center;
+  }
+  
+  h3{
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5vw;
+  
+  }
+  
+  
+  
+  
+  

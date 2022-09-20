@@ -1,0 +1,14 @@
+.logo {
+    width: 60px;
+    height: 80px;
+    margin-left: 35%;
+  }
+  .min-card{
+    width:20%;
+    border:2px solid;
+    border-color:#314755;
+    height:180px;
+  }
+  .mat-checkbox{
+    color:#314755;
+  }

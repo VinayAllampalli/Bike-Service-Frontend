@@ -1,0 +1,74 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="card">
+        <mat-tab-group mat-stretch-tabs class="tab">
+            <mat-tab label="SERVICES">
+                <form [formGroup]="form">
+                <mat-card class>
+                <mat-form-field class="form" appearance="outline">
+                    <mat-label>Service Name</mat-label>
+                    <input matInput type="text"  formControlName="ServiceName">
+                </mat-form-field>
+                <mat-form-field  class="form" appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input matInput type="text"  formControlName="Price">
+                </mat-form-field>
+                <mat-form-field class="form"  appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput type="text"  formControlName="Description">
+                   </textarea>
+                </mat-form-field>
+                
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" style="color:white; margin-top:2%;" class="btn"
+                        (click)="submitform()">Submit</button>
+                </div>
+                </mat-card>
+                </form>
+            </mat-tab>
+            <mat-tab label="Engine Oils">
+                <form [formGroup]="form1">
+                    <mat-card class>
+                    <mat-form-field class="form" appearance="outline">
+                        <mat-label> EngineOilName</mat-label>
+                        <input matInput type="text"  formControlName="EngineOilName">
+                    </mat-form-field>
+                    <mat-form-field  class="form" appearance="outline">
+                        <mat-label>Price</mat-label>
+                        <input matInput type="text"  formControlName="Price">
+                    </mat-form-field>
+                    <mat-form-field class="form"  appearance="outline">
+                        <mat-label>TankCapacity</mat-label>
+                        <input matInput type="text"  formControlName="TankCapacity">
+                       
+                    </mat-form-field>
+                    
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <button mat-raised-button color="primary" style="color:white; margin-top:2%;" class="btn"
+                            (click)="EngineOil()">Submit</button>
+                    </div>
+                    </mat-card>
+                    </form>
+            </mat-tab>
+            <mat-tab label="Battery">
+                <form [formGroup]="form2">
+                    <mat-card class>
+                    <mat-form-field class="form" appearance="outline">
+                        <mat-label>BatteryName</mat-label>
+                        <input matInput type="text"  formControlName="BatteryName">
+                    </mat-form-field>
+                    <mat-form-field  class="form" appearance="outline">
+                        <mat-label>Price</mat-label>
+                        <input matInput type="text"  formControlName="Price">
+                    </mat-form-field>
+                    
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <button mat-raised-button color="primary" style="color:white; margin-top:2%;" class="btn"
+                            (click)="Battery()">Submit</button>
+                    </div>
+                    </mat-card>
+                    </form>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card>
+
+    </div>

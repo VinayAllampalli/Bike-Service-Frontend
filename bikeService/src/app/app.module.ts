@@ -19,6 +19,9 @@ import { DatePipe } from '@angular/common';
 import { AboutComponent } from './components/about/about.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ServicingListComponent } from './components/servicing-list/servicing-list.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
+import { AllFormsComponent } from './components/all-forms/all-forms.component';
 
 
 
@@ -68,7 +71,10 @@ const ngxUiLoaderConfig:NgxUiLoaderConfig =
     DashboardComponent,
     FooterComponent,
     HeaderComponent,
-    AboutComponent
+    AboutComponent,
+    ServicingListComponent,
+    InvoiceComponent,
+    AllFormsComponent
   ],
   imports: [
     BrowserModule,    

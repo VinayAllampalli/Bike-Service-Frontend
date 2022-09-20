@@ -17,6 +17,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class DashboardComponent implements OnInit {
  location = ["Select","Visakhapatnam"]
+ CC =['100 CC','125 CC','150 CC','200 CC','220 CC','500 CC']
   form:any;
   name:any;
   x:any;
@@ -69,6 +70,7 @@ export class DashboardComponent implements OnInit {
       location: ['', [Validators.required]],
       PickUpdate: ['', [Validators.required]],
       bikeName:['',[Validators.required]],
+      Bike_CC:['',[Validators.required]],
       regNo:['',[Validators.required]],
       phonenumber: ['',[
           Validators.required,
@@ -95,6 +97,7 @@ export class DashboardComponent implements OnInit {
     obj.location = temp.location;
     obj.PickUpdate = temp.PickUpdate;
     obj.bikeName = temp.bikeName;
+    obj.Bike_CC = temp.Bike_CC
     obj.regNo = temp.regNo;
     obj.phonenumber = temp.phonenumber;
 
@@ -103,7 +106,8 @@ export class DashboardComponent implements OnInit {
     console.log("testsfs",this.backend.bookingDetails);
     localStorage.setItem('bikeName',obj.bikeName.bikeName);
     localStorage.setItem('regNo',obj.regNo)
-    this.router.navigate(['header/about']);
+    localStorage.setItem('Bike_CC',obj.Bike_CC)
+    this.router.navigate(['header/ServicingList']);
     }
 
   } 

@@ -1,0 +1,112 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card style="width:80%;margin-top: 2%;border:2px solid;border-color:#6CB33F;">
+        <form [formGroup]="form">
+        <div fxLayout="column" fxLayoutAlign="start start">
+        <mat-card style="width:20%;margin-top:1%;background-image:linear-gradient(to right, #314755 100%, #26a0da 100%, #314755 0%);">
+            <h4 style="font-style: italic;font-weight: 900;color:white">Bike Name:  &nbsp; {{BikeName}}  {{Bike_CC}}</h4>
+            <h4 style="font-style: italic;font-weight: 900;color:white">Registration NO:  &nbsp; {{BIke_RegNo}}</h4>
+            </mat-card>
+            </div>
+        <div fxLayout="row" fxLayoutAlign="space-evenly center" style="margin-top:3%">           
+            <mat-card  class="min-card">
+                <div fxLayout="row" fxLayoutAlign="end end" >
+                    <mat-icon>info</mat-icon>
+                    </div>
+                <img style="margin-top:1%" class="logo" src="../../../assets/images/tools.png">
+                <mat-checkbox  value="General Service" (change)="onchange($event)">General Service</mat-checkbox>
+                </mat-card>
+                <mat-card class="min-card">
+                    <div fxLayout="row" fxLayoutAlign="end end" >
+                        <mat-icon>info</mat-icon>
+                        </div>
+                    <img style="margin-top:1%" class="logo" src="../../../assets/images/engine oil.jpg">
+                    <mat-checkbox  value="Engine oil Change" (change)="onchange($event)">Engine oil Change</mat-checkbox>
+                    <div fxLayout="row" fxLayoutAlign="start start" >
+                    <mat-form-field style="width:60%;margin-left: 3%;">
+                            <mat-label>Select Engine Oil</mat-label>
+                            <mat-select formControlName="oilName">
+                                <mat-option *ngFor="let Oil of oil" [value]="Oil">
+                                    {{Oil.EngineOilName}}
+                                </mat-option>   
+                            </mat-select>
+                        </mat-form-field>
+                        </div>
+                </mat-card>
+                    <mat-card class="min-card">
+                        <div fxLayout="row" fxLayoutAlign="end end" >
+                            <mat-icon>info</mat-icon>
+                            </div>
+                        <img style="margin-top:1%" class="logo" src="../../../assets/images/bike chain.png">
+                        <mat-checkbox  value="Chain Check" (change)="onchange($event)">Chain Check</mat-checkbox>
+                        </mat-card>
+                        <mat-card class="min-card">
+                            <div fxLayout="row" fxLayoutAlign="end end" >
+                                <mat-icon>info</mat-icon>
+                                </div>
+                            <img style="margin-top:1%" class="logo" src="../../../assets/images/brake pads.jpg">
+                            <mat-checkbox  value="Brake Pads" (change)="onchange($event)">Brake Pads Change</mat-checkbox>
+                            </mat-card>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-evenly center" style="margin-top:3%">
+                <mat-card class="min-card">
+                    <div fxLayout="row" fxLayoutAlign="end end" >
+                        <mat-icon>info</mat-icon>
+                        </div>
+                    <img style="margin-top:1%" class="logo" src="../../../assets/images/bike wash.jpg">
+                    <mat-checkbox  value="Bike Wash" (change)="onchange($event)">Bike Wash</mat-checkbox>
+                    
+                    </mat-card>
+                    <mat-card class="min-card">
+                        <div fxLayout="row" fxLayoutAlign="end end" >
+                            <mat-icon>info</mat-icon>
+                            </div>
+                        <img style="margin-top:1%" class="logo" src="../../../assets/images/tyre.jpg">
+                        <mat-checkbox value="Wheels Change" (change)="onchange($event)">Wheels Change</mat-checkbox>
+                        </mat-card>
+                        <mat-card class="min-card">
+                            <div fxLayout="row" fxLayoutAlign="end end" >
+                                <mat-icon>info</mat-icon>
+                                </div>
+                            <img style="margin-top:1%" class="logo" src="../../../assets/images/body check.jpg">
+                            <mat-checkbox value="Full Body Check" (change)="onchange($event)">Full Body Check</mat-checkbox>
+                            </mat-card>
+                            <mat-card class="min-card">
+                                <div fxLayout="row" fxLayoutAlign="end end" >
+                                    <mat-icon>info</mat-icon>
+                                    </div>
+                                <img  style="margin-top:1%" class="logo" src="../../../assets/images/bike battery.jpg">
+                                <mat-checkbox value="Battery Change" (change)="onchange($event)">Battery Change</mat-checkbox>
+                                <mat-form-field style="width:60%;margin-left: 3%;">
+                                    <mat-label>Select Battery</mat-label>
+                                <mat-select formControlName="Battery">
+                                    <mat-option *ngFor="let Battery of batteries" [value]="Battery">
+                                        {{Battery.BatteryName}}
+                                    </mat-option>   
+                                </mat-select>  
+                                </mat-form-field>  
+                            </mat-card>
+            </div>
+                <div fxLayout="row" fxLayoutAlign="space-evenly center" style="margin-top:3%">
+                    <mat-card class="min-card">
+                        <div fxLayout="row" fxLayoutAlign="end end" >
+                            <mat-icon>info</mat-icon>
+                            </div>
+                        <img style="margin-top:1%" class="logo" src="../../../assets/images/bike lights.png">
+                        <mat-checkbox value="Lights & Cables Check" (change)="onchange($event)">Lights & Cables Check</mat-checkbox>
+
+                    </mat-card>
+                    <mat-card class="min-card">
+                        <div fxLayout="row" fxLayoutAlign="end end" >
+                            <mat-icon>info</mat-icon>
+                            </div>
+                        <img style="margin-top:1%" class="logo" src="../../../assets/images/tools.png">
+                        <mat-checkbox value="others" (change)="onchange($event)">Others</mat-checkbox>
+                    </mat-card>
+               </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" style="color:white; margin-top:2%;" class="btn"
+                        (click)="submit()">Book Service</button>
+                </div>
+                </form>
+        </mat-card>
+    </div>

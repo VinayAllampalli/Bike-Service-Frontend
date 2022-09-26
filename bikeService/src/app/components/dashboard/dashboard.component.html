@@ -1,0 +1,66 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxLayout="column" fxLayoutAlign="start start">
+        <h1 style="font-style: italic;font-weight: 900;color: #5cb85c; margin-left:1%;">{{x}}, {{name}}</h1>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="end end">
+        <mat-card class="contain">
+            <form [formGroup]="form">
+                <mat-card-content>
+                    <mat-form-field style="width:40%;margin-left:3%;">                        
+                        <mat-label>Select Location</mat-label>
+                        <mat-select formControlName="location">
+                            <mat-option *ngFor="let loc of location" [value]="loc">
+                                {{loc}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>                    
+                    <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;">
+                        <mat-label>Service Date</mat-label>
+                        <input matInput [matDatepicker]="date" [min]="currentDate" formControlName="PickUpdate">
+                        <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                        <mat-datepicker #date></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field style="width:40%;margin-left: 3%;">
+                        <mat-label>Select Bike</mat-label>
+                        <mat-select formControlName="bikeName">
+                            <mat-option *ngFor="let bike of bikes" [value]="bike">
+                                {{bike.bikeName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;">
+                        <mat-label>Bike Reg No </mat-label>
+                        <input matInput type="text"  formControlName="regNo">
+                    </mat-form-field>
+                    <mat-form-field style="width:40%;margin-left: 3%;cursor: pointer;">
+                        <mat-label>Enter Mobile Number </mat-label>
+                        <span matPrefix>+91 &nbsp;</span>
+                        <input matInput type="text"  formControlName="phonenumber" maxlength="10">
+                        <mat-error >
+                            <div
+                            *ngIf="form.controls.phonenumber?.dirty && form.controls.phonenumber.errors?.minlength && form.controls.phonenumber.errors?.pattern">
+                            phonenumber should contain 10 numbers only & only numerics values                       
+                         </div>
+                       
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;">
+                        <mat-label>Bike CC </mat-label>
+                        <mat-select formControlName="Bike_CC">
+                            <mat-option *ngFor="let Bike_cc of CC" [value]="Bike_cc">
+                                {{Bike_cc}}
+                            </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                </mat-card-content>
+                <button mat-raised-button></button>
+            </form>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <button mat-raised-button color="primary" style="color:white; margin-top:2%;" class="btn"
+                    (click)="submitform()">Book Service</button>
+            </div>
+        </mat-card>
+    </div>
+   
+</div>

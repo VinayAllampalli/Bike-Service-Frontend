@@ -1,0 +1,47 @@
+.logo {
+  width: 60px;
+  height: 40px;
+}
+
+.example-spacer {
+  flex: 0.98 1 auto;
+}
+
+.tool {
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+
+}
+
+.nav-item:hover {
+
+  background-color: #09ADA8;
+  text-align: center;
+}
+
+.mat-sidenav {
+  background-image: linear-gradient(to bottom, #314755 0%, #26a0da 100%, #314755 100%);
+
+}
+
+.nav-link {
+  color: white;
+}
+
+.example-spacer {
+  flex: 0.98 1 auto;
+}
+
+.is-active {
+  background-color: #09ADA8;
+}
+
+.nav-lis {
+  margin-top: 10%;
+}
+img{
+  padding-top: 20px;
+  margin-left:80px;
+}

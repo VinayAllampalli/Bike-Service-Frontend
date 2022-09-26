@@ -1,0 +1,19 @@
+.card{
+    width: 50%;
+    text-align: center;
+    margin-top:5%;
+    border:2px solid;
+    border-color:#6CB33F;
+}
+mat-tab{
+    background-color: blue;
+    color:green
+}
+.tab{
+    max-width: 800px;
+}
+.form{
+    width:50%;
+    margin-left: 12%;
+    cursor: pointer  
+}

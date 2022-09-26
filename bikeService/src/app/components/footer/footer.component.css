@@ -1,0 +1,41 @@
+h1{
+    font-weight: bold;
+    text-align: center;
+    font-size: 2vw;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+      sans-serif
+  
+  
+  }
+  
+  .logo{
+    width:120px;
+    height:80px;
+    margin-top: 6%;
+    margin-left:8%;
+  }
+  hr{
+    border: 1px solid rgb(252, 250, 250);
+  }
+  .fa {
+  
+    font-size: 20px;
+  
+    text-align: center;
+    text-decoration: none;
+  }
+  .fa-facebook {
+  
+    color: rgb(70, 61, 196);
+  }
+  .fa-instagram {
+  
+    color: rgb(212, 89, 32);
+  }
+  .fa-whatsapp{
+    color: rgb(91, 233, 103);
+  
+  }
+  h3{
+    cursor: pointer;
+  }

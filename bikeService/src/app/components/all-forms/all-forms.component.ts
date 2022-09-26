@@ -34,9 +34,10 @@ export class AllFormsComponent implements OnInit {
   }
   formbuilder1(){
     this.form1=this.fb.group({
+      ServiceName:['EngineOil',[Validators.required]],
       EngineOilName: ['', [Validators.required]],
       TankCapacity: ['', [Validators.required]],
-      Price: ['', [Validators.required]]
+      EngineOilPrice: ['', [Validators.required]]
     })
   }
   formbuilder2(){
@@ -93,7 +94,7 @@ export class AllFormsComponent implements OnInit {
       let obj: any = {};
       obj.EngineOilName = temp.EngineOilName;
       obj.TankCapacity = temp.TankCapacity;
-      obj.Price = temp.Price;
+      obj.EngineOilPrice = temp.EngineOilPrice;
       this.backend.engineoil(obj).subscribe(async (data:any) => {
         console.log("---->",data)
         this.snackbar.open(data.message, 'ok', {

@@ -1,0 +1,84 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <div class="container ">
+        <div class="row">
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <mat-card class="card">
+                    <div fxLayout="row" fxLayoutAlign="space-evenly start">
+                        <mat-form-field appearance="outline" class="feild">
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Search by name" #input>
+                            <mat-icon *ngIf="searchedText==''" class="material-icons searchicon" matSuffix>
+                                search
+                            </mat-icon>
+                            <mat-icon *ngIf="searchedText!=''" matSuffix (click)="clear()">clear</mat-icon>
+                        </mat-form-field>
+                        <mat-card
+                            style="width:20%;margin-top:1%;background-image:linear-gradient(to right, #314755 100%, #26a0da 100%, #314755 0%);">
+                            <h4 style="font-style: italic;font-weight: 900;color:white">Bike Name: &nbsp; {{BikeName}}
+                                {{Bike_CC}}</h4>
+                            <h4 style="font-style: italic;font-weight: 900;color:white">Registration NO: &nbsp;
+                                {{BIke_RegNo}}</h4>
+                        </mat-card>
+                    </div>
+                    <table matSort mat-table [dataSource]="companyArr" class="table" recycleRows>
+                        <div fxLayout="column" fxLayoutAlign="start stretch">
+                            <form [formGroup]="form">
+                                <ng-container matColumnDef="Select">
+                                    <th mat-header-cell *matHeaderCellDef>
+                                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                                            [checked]="selection.hasValue() && isAllSelected()"
+                                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+                                        </mat-checkbox>
+                                    </th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <mat-checkbox (click)="$event.stopPropagation()"
+                                            (change)="$event ? selection.toggle(row) : null"
+                                            [checked]="selection.isSelected(row)">
+                                        </mat-checkbox>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="ServiceName">
+                                    <th mat-header-cell *matHeaderCellDef> ServiceName </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.ServiceName}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Description">
+                                    <th mat-header-cell *matHeaderCellDef> Description</th>
+                                    <td mat-cell *matCellDef="let element">
+                                        <mat-icon (click)="openDialog()" style="color:#26a0da;  margin-left: 10%; ">
+                                            visibility</mat-icon>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Options">
+                                    <th mat-header-cell *matHeaderCellDef> Options</th>
+                                    <td mat-cell *matCellDef="let element">
+
+                                        <mat-form-field appearance="outline" style="margin-top: 3%;"
+                                            placeholder="Select">
+                                            <mat-select formControlName="element">
+                                                <mat-option *ngFor="let bat of mount" [value]="bat">
+                                                    {{bat.BatteryName}} -
+                                                    {{bat.BatteryPrice}} /-
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="Price">
+                                    <th mat-header-cell *matHeaderCellDef> Price</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.Price}} /-</td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                                    (click)="selection.toggle(row)"></tr>
+                            </form>
+                        </div>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                    <div fxLayout="column" fxLayoutAlign="center center">
+                        <button mat-raised-button color="primary" mat-raised-button
+                            (click)="logSelection()">Submit</button>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

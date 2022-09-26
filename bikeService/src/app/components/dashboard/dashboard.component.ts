@@ -38,7 +38,8 @@ export class DashboardComponent implements OnInit {
     private fb: FormBuilder,
     private backend: BackendService,
     private ngxService:NgxUiLoaderService,
-    public snackbar: MatSnackBar,) { }
+    public snackbar: MatSnackBar,
+  ) { }
 
   ngOnInit(): void {
     this.currentDate = new Date();
@@ -64,6 +65,8 @@ export class DashboardComponent implements OnInit {
     
       
   }
+
+
 
   formbuilder() {
     this.form = this.fb.group({
@@ -107,13 +110,13 @@ export class DashboardComponent implements OnInit {
     localStorage.setItem('bikeName',obj.bikeName.bikeName);
     localStorage.setItem('regNo',obj.regNo)
     localStorage.setItem('Bike_CC',obj.Bike_CC)
-    this.router.navigate(['header/ServicingList']);
+    this.router.navigate(['header/selectService']);
     }
 
   } 
   bikeGet(){
     this.backend.getBikes().subscribe((res:any)=>{
-      console.log("---->",res)
+      console.log("---->>>>>",res)
       this.bikes=res["data"];
     })
   }

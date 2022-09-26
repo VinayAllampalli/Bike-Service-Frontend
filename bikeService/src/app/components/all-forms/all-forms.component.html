@@ -28,13 +28,17 @@
             <mat-tab label="Engine Oils">
                 <form [formGroup]="form1">
                     <mat-card class>
+                        <mat-form-field class="form" appearance="outline">
+                            <mat-label> ServiceName</mat-label>
+                            <input matInput type="text"  formControlName="ServiceName">
+                        </mat-form-field> 
                     <mat-form-field class="form" appearance="outline">
                         <mat-label> EngineOilName</mat-label>
                         <input matInput type="text"  formControlName="EngineOilName">
                     </mat-form-field>
                     <mat-form-field  class="form" appearance="outline">
                         <mat-label>Price</mat-label>
-                        <input matInput type="text"  formControlName="Price">
+                        <input matInput type="text"  formControlName="EngineOilPrice">
                     </mat-form-field>
                     <mat-form-field class="form"  appearance="outline">
                         <mat-label>TankCapacity</mat-label>

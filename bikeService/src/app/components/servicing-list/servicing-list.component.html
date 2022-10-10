@@ -21,7 +21,7 @@
                         </div>
                     <img style="margin-top:1%" class="logo" src="../../../assets/images/engine oil.jpg">
                     <mat-checkbox  value="Engine oil Change" (change)="onchange($event)">Engine oil Change</mat-checkbox>
-                    <div fxLayout="row" fxLayoutAlign="start start" >
+                    <!-- <div fxLayout="row" fxLayoutAlign="start start" >
                     <mat-form-field style="width:60%;margin-left: 3%;">
                             <mat-label>Select Engine Oil</mat-label>
                             <mat-select formControlName="oilName">
@@ -30,7 +30,7 @@
                                 </mat-option>   
                             </mat-select>
                         </mat-form-field>
-                        </div>
+                        </div> -->
                 </mat-card>
                     <mat-card class="min-card">
                         <div fxLayout="row" fxLayoutAlign="end end" >
@@ -72,18 +72,18 @@
                             </mat-card>
                             <mat-card class="min-card">
                                 <div fxLayout="row" fxLayoutAlign="end end" >
-                                    <mat-icon>info</mat-icon>
+                                    <mat-icon value="Battery Change" (click)="info(',vinay')">info</mat-icon>
                                     </div>
                                 <img  style="margin-top:1%" class="logo" src="../../../assets/images/bike battery.jpg">
                                 <mat-checkbox value="Battery Change" (change)="onchange($event)">Battery Change</mat-checkbox>
-                                <mat-form-field style="width:60%;margin-left: 3%;">
+                                <!-- <mat-form-field style="width:60%;margin-left: 3%;">
                                     <mat-label>Select Battery</mat-label>
                                 <mat-select formControlName="Battery">
                                     <mat-option *ngFor="let Battery of batteries" [value]="Battery">
                                         {{Battery.BatteryName}}
                                     </mat-option>   
                                 </mat-select>  
-                                </mat-form-field>  
+                                </mat-form-field>   -->
                             </mat-card>
             </div>
                 <div fxLayout="row" fxLayoutAlign="space-evenly center" style="margin-top:3%">

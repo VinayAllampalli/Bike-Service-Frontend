@@ -1,33 +1,34 @@
 table {
 
-    width:70%;
+    width:90%;
     border:2px solid;border-color:#6CB33F;
-    margin-left:15%;
     margin-bottom:3%;
   }
   
-  th.mat-header-cell {
+  /* th.mat-header-cell {
     text-align: left;
     max-width: 400px;
-  }
-  .feild{
-   margin-right: 4%;;
-    margin-top: 6%;
-  }
-  .card{
-    width:80%;
-    margin-top: 2%;
-    border:2px solid;border-color:#6CB33F;
-  }
+    
+  } */
+ 
+ 
   .mat-row:nth-child(2n+1){
     background-color: #d4d7ee;
   }
   .mat-row:not(:nth-child(n+1)){
     background-color:#ffffff;
-    text-align: center;
+    /* text-align: center; */
+    
   }
   th.mat-header-cell {
     color:white ;
     background-color: #848cc9;
-    font-style: italic;font-weight: 500;   
+    font-style: italic;
+    font-weight: 500;   
+   
   }
+.feild{
+ 
+  width: 200px;
+}
+ 

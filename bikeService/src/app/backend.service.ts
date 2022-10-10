@@ -7,9 +7,11 @@ import { environment } from "../environments/environment"
 })
 export class BackendService {
 
-  public bookingDetails:any;
+  public UserDetails:any;
   public servicingList:any;
-  public types:any
+  public price:any;
+
+
   constructor(private http: HttpClient) { }
   
   register(obj: any) {
@@ -36,7 +38,7 @@ export class BackendService {
     return this.http.get(`${environment.base_url}/getBattery`);
   }
   engineoil(obj: any){
-    return this.http.post(`${environment.base_url}/engineOil`, obj, {})
+    return this.http.post(`${environment.base_url}/Oils`, obj, {})
   }
   battery(obj: any){
     return this.http.post(`${environment.base_url}/batteries`, obj, {})
@@ -44,10 +46,16 @@ export class BackendService {
   bikeService(obj: any){
     return this.http.post(`${environment.base_url}/Services`, obj, {})
   }
+  getService(){
+    return this.http.get(`${environment.base_url}/getServices`);
+  }
   ServicePrice(list:any){
     let params = new HttpParams();
     params = params.append('services', list.join(', '));
   return this.http.get(`${environment.base_url}/ServicePrice`,{ params: params })
 
+  }
+  alldata(obj:any){
+    return this.http.post(`${environment.base_url}/userBooking`, obj)
   }
 }

@@ -22,6 +22,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ServicingListComponent } from './components/servicing-list/servicing-list.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
 import { AllFormsComponent } from './components/all-forms/all-forms.component';
+import { SelectServiceComponent } from './components/select-service/select-service.component';
+import { DailogueComponent } from './components/dailogue/dailogue.component';
+import { CourselComponent } from './coursel/coursel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 
@@ -74,7 +79,10 @@ const ngxUiLoaderConfig:NgxUiLoaderConfig =
     AboutComponent,
     ServicingListComponent,
     InvoiceComponent,
-    AllFormsComponent
+    AllFormsComponent,
+    SelectServiceComponent,
+    DailogueComponent,
+    CourselComponent
   ],
   imports: [
     BrowserModule,    
@@ -89,6 +97,8 @@ const ngxUiLoaderConfig:NgxUiLoaderConfig =
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgbModule,
+    MatStepperModule,
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [BackendService,DatePipe],

@@ -80,7 +80,8 @@ export class DashboardComponent implements OnInit {
           Validators.minLength(10),
           Validators.maxLength(10),
           Validators.pattern('[1-9]{1}[0-9]{9}'),
-        ]]
+        ]],
+      Address:['']
       
     });
   }
@@ -103,13 +104,18 @@ export class DashboardComponent implements OnInit {
     obj.Bike_CC = temp.Bike_CC
     obj.regNo = temp.regNo;
     obj.phonenumber = temp.phonenumber;
+    obj.Address=temp.Address
 
     console.log('-----------------------------------', obj);
-    this.backend.bookingDetails=obj;
-    console.log("testsfs",this.backend.bookingDetails);
+    this.backend.UserDetails=obj;
+    console.log("testsfs",this.backend.UserDetails);
     localStorage.setItem('bikeName',obj.bikeName.bikeName);
     localStorage.setItem('regNo',obj.regNo)
     localStorage.setItem('Bike_CC',obj.Bike_CC)
+    localStorage.setItem('Address',obj.Address)
+    localStorage.setItem('location',obj.location);
+    localStorage.setItem('pickUpdate',obj.PickUpdate)
+    localStorage.setItem('phonenumber',obj.phonenumber)
     this.router.navigate(['header/selectService']);
     }
 

@@ -1,1 +1,70 @@
-<p>invoice works!</p>
+<mat-stepper #stepper>
+   
+    <mat-step [stepControl]="secondFormGroup">
+        
+      
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <mat-card style="width:80%;border:2px solid;border-color:#6CB33F;">
+                <h1 style="text-align:center">Your Service Order Details </h1>
+                <hr>
+                <h2>Bike Name : {{bikeName}} {{Bike_CC}}</h2>
+                <h2>Bike Registration No : {{regNo}}</h2>
+              
+                <h2>Service Date : {{pickUpdate}}</h2>
+                <h2>Location : {{loc}}</h2>
+                <h2>Address : {{Address}}</h2>
+                <h2>Mobile No : {{phoneNumber}}</h2>
+
+                <h2>Service Selected :</h2>
+                <mat-card style="border:2px solid;border-color:#6CB33F;">
+                <table class="table">
+                    
+                    <thead>
+                      <tr >
+                        <th scope="col">Services</th>
+                        <th scope="col">Price</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <td><tr *ngFor="let services of values">{{services}}</tr>
+                        <hr>
+                    <tr>Total</tr></td>
+                        
+                      
+                      <td><tr *ngFor="let amount of priceArray">{{amount}} /-</tr>
+                        <hr>
+                    <tr>{{total}} /-</tr></td>
+                       
+                        
+                      </tbody>
+                      </table>
+                      </mat-card>
+                      
+
+                <!-- <h2>Service Selected :
+                    <li *ngFor="let services of values">
+                        {{ services}}/-
+                      </li>
+                </h2> -->
+                <div fxLayout="row" fxLayoutAlign="center center">
+                <button matStepperNext mat-raised-button color="primary" style="color:white; margin-top:2%;" (click)="submit()">Done</button>
+                </div>
+            </mat-card>
+
+            </div>
+          
+      
+          
+        
+      
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>

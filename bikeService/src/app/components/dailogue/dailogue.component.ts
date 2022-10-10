@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SelectServiceComponent } from '../select-service/select-service.component';
 
 
 @Component({
@@ -7,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dailogue.component.css']
 })
 export class DailogueComponent implements OnInit {
-
-  constructor() { }
+receviedRow:any
+  constructor(
+    public dialogRef:MatDialogRef<SelectServiceComponent>,
+    @Inject(MAT_DIALOG_DATA) public data:any
+  ) { 
+    this.receviedRow=data
+  }
 
   ngOnInit(): void {
   }

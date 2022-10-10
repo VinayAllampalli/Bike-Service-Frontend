@@ -23,8 +23,7 @@
     width:80%;
     border:2px solid;
     border-color:#6CB33F;
-  
-  
+
   }
   h1{
     font-weight: bold;
@@ -40,7 +39,23 @@
     font-size: 1.5vw;
   
   }
-  
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  .Arrow{
+    width:100px;
+    height:50px;
+  }.payment{
+    width: 150px;
+    height: 200px;
+  }
+  .use{
+    margin-top: 2%;
+     border:2px solid;
+    border-color:#6CB33F;
+
+  }
   
   
   

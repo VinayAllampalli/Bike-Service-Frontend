@@ -1,0 +1,10 @@
+.form{
+    width:60%;
+    margin-left: 19%;
+    cursor: pointer  
+}
+.card{
+    width:50%;
+    border:2px solid;
+    border-color:#6CB33F;
+}

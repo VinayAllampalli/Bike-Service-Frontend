@@ -20,6 +20,7 @@ export class ServicingListComponent implements OnInit {
   batteries:any;
   type:any;
 
+
   constructor(  public router: Router,
     private fb: FormBuilder,
     private backend: BackendService,
@@ -30,9 +31,9 @@ export class ServicingListComponent implements OnInit {
     this.BikeName=localStorage.getItem('bikeName');
     this.Bike_CC=localStorage.getItem('Bike_CC');
     this.BIke_RegNo=localStorage.getItem('regNo');
-    this.engineoil();
+    // this.engineoil();
     this.formbuilder();
-    this.battery();
+    // this.battery();
   }
  
   submit(){
@@ -52,14 +53,14 @@ export class ServicingListComponent implements OnInit {
       // this.backend.servicingList=this.list;
       // this.backend.types=obj
       console.log("___",this.list)
-      this.backend.ServicePrice(this.list).subscribe((res:any)=>{
-        console.log("------->",res)
-      })
+      // this.backend.ServicePrice(this.list).subscribe((res:any)=>{
+      //   console.log("------->",res)
+      // })
 
       // console.log("++++",this.backend.servicingList)
       // console.log("___>",this.backend.types)
       localStorage.setItem('serviceList',this.list)
-      this.router.navigate(['header/invoice'])
+      // this.router.navigate(['header/invoice'])
     }
   }
 
@@ -80,19 +81,22 @@ onchange(checkbox:any){
     // console.log("please select the service")
   }
 }
-engineoil(){
-  this.backend.getEngineOil().subscribe((res:any)=>{
-    console.log("---->",res)
-    this.oil=res["data"];
+info(value:any){
+  console.log("------->",value)
+}
+// engineoil(){
+//   this.backend.getEngineOil().subscribe((res:any)=>{
+//     console.log("---->",res)
+//     this.oil=res["data"];
    
-  })
-}
-battery(){
-  this.backend.getBattery().subscribe((res:any)=>{
-    console.log("---->",res)
-    this.batteries=res["data"];
-  })
-}
+//   })
+// }
+// battery(){
+//   this.backend.getBattery().subscribe((res:any)=>{
+//     console.log("---->",res)
+//     this.batteries=res["data"];
+//   })
+// }
 formbuilder() {
   this.form = this.fb.group({
     oilName:[],

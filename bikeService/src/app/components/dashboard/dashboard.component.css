@@ -9,6 +9,7 @@
     border-color:#6CB33F;
     margin-right: 4%;
     background-color: rgb(241, 241, 241);
+    margin-bottom:3%;
   }
   .img{
     background-image: url('/../assets/images/bike2.jpg');
@@ -55,6 +56,14 @@
      border:2px solid;
     border-color:#6CB33F;
 
+  }
+  .works{
+    margin-top:5%;
+    width:80%;
+    border:2px solid;
+    border-color:#6CB33F;
+  
+  
   }
   
   

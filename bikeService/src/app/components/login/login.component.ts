@@ -61,8 +61,6 @@ export class LoginComponent implements OnInit {
   get password() {
     return this.form.get('password')
   }
-
-
   submitform() {
     // this.ngxService.start();
     if (!this.form.valid) {
@@ -77,11 +75,9 @@ export class LoginComponent implements OnInit {
     let use: any = {};
     obj.email = temp.email
     obj.password = temp.password
-
     this.getUsers = this.backend.getUsers(obj.email).subscribe(async(data)=>{
       console.log("+++++++",data)
     })
-
     this.log = this.backend.login(obj).subscribe(async(res) => {
       use = res;
       // console.log("---->",use.message)
@@ -90,10 +86,10 @@ export class LoginComponent implements OnInit {
         this.snackbar.open(use.message, 'ok', {
                     duration: 3000,
                     panelClass: ['blue-snackbar'],
-                  });
-        
-
+                  }); 
         let user = use.obj.user
+        this.backend.userId=user.userId
+        console.log("----->",this.backend.userId)
         localStorage.setItem('email', user.email)
         localStorage.setItem('username', user.username)
         localStorage.setItem('userId',user.userId)

@@ -1,0 +1,75 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <form [formGroup]="form">
+    <mat-card style="width:80%;margin-left:70px; margin-top:5%; border:2px solid;border-color:#6CB33F;">
+       <h1>Contact Us</h1>
+
+        <mat-form-field class="form" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text"  formControlName="Name" placeholder="Enter Your Name">
+        </mat-form-field>
+        <mat-form-field  class="form" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email"  formControlName="email" placeholder="Enter Your Email">
+        </mat-form-field>
+        <mat-form-field class="form"  appearance="outline">
+            <mat-label>FeedBack</mat-label>
+            <textarea matInput type="text"  formControlName="Feedback">
+           </textarea>
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button color="primary" style="color:white; margin-top:2%;" class="btn"
+                (click)="submit()">Submit</button>
+        </div>
+        </mat-card>
+        </form>
+    </div>
+
+<mat-card style="background-image: linear-gradient(to right, #232526 0%, #414345  0%, #232526  100%);text-align:left;margin-top:2%;">
+<div fxLayout="row" fxLayoutAlign="start stretch" >
+
+    <img class="logo" src="../../../assets/images/bike logo.png">&nbsp;&nbsp;&nbsp;
+
+    <h1 style="color:white; margin-top: 8%;"> BIKE LAB
+    </h1>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <h2 style="margin-left:20%;color:white; margin-top:3%;">
+      COMPANY
+      <h3 sty>
+        FAQ
+        </h3>
+        <h3>
+        Privacy Policy
+          </h3>
+          <h3>
+            Terms & Conditions
+            </h3>
+
+    </h2>
+    <h2 style="margin-left:15%;color:white; margin-top:3%;cursor: pointer;">
+      FOLLOW US
+
+      <h3>
+        <a href="www.facebook.com" class="fa fa-facebook"></a>
+        Facebook
+
+        </h3>
+        <h3>
+          <a href="www.instagram.com" class="fa fa-instagram"></a>
+        Instagram
+
+
+          </h3>
+          <h3>
+            <a href="www.whatsapp.com" class="fa fa-whatsapp"></a>
+            Whatsapp
+            </h3>
+            </h2>
+       
+    </div>
+    <hr>
+    <h3 style="color:white;text-align: center;">Copyright @ 2022 All rights reserved</h3>
+</mat-card>
+<app-maps></app-maps>
+   
+

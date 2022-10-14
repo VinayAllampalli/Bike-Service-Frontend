@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 import { BackendService } from 'src/app/backend.service';
@@ -63,7 +63,8 @@ export class SignUpComponent implements OnInit {
     obj.username = temp.username;
     obj.email = temp.email;
     obj.password = temp.password;
-    this.backend.register(obj).subscribe(async (data) => {
+    this.backend.register(obj).subscribe(data => {
+      console.log("+++++",data)
       if (data == true) {
         this.form.reset();
       }

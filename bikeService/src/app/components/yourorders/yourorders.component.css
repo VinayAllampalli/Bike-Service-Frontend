@@ -1,18 +1,4 @@
-table {
-
-    width:90%;
-    border:2px solid;border-color:#6CB33F;
-    margin-bottom:3%;
-  }
-  
-  /* th.mat-header-cell {
-    text-align: left;
-    max-width: 400px;
-    
-  } */
- 
- 
-  .mat-row:nth-child(2n+1){
+.mat-row:nth-child(2n+1){
     background-color: #d4d7ee;
   }
   .mat-row:not(:nth-child(n+1)){
@@ -28,8 +14,10 @@ table {
     margin-top: 10%;
    
   }
-.feild{
- 
-  width: 200px;
-}
- 
+  table {
+
+    width:90%;
+    border:2px solid;border-color:#6CB33F;
+    margin-bottom:3%;
+    margin-top: 3%;
+  }

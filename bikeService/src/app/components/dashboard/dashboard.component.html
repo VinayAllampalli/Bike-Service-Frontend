@@ -3,7 +3,56 @@
 </div>
 <app-coursel></app-coursel>
 
-<div fxLayout="row" fxLayoutAlign="start start">
+<div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card class="works">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <span>
+          <h1>HOW IT WORK</h1>
+        </span>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+        <div fxLayout="column" fxLayoutAlign="start start">
+
+         
+            <img style="width: 140px;height: 140px;" src="../../../assets/images/bookBikeg.png">
+            <h3>Select Bike Services</h3>
+
+
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center">
+
+         
+            <img class="logo" src="../../../assets/images/tools.png">
+            <h3 style="margin-top:16%">Detail Check </h3>
+
+
+
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center">
+
+         
+              <img class="logo" src="../../../assets/images/selected Service.jpg">
+              <h3 style="margin-top:11%">Fixing your Services</h3>
+  
+  
+  
+          </div>
+        <div fxLayout="column" fxLayoutAlign="end end">
+          
+            <img style="width: 140px;height: 140px;" src="../../../assets/images/payment.jpg">
+            <h3 style="margin-right:30px">Payment</h3>
+
+        
+        </div>
+      </div>
+    </mat-card>
+
+  </div>
+
+
+<!-- <h1>HOW IT WORKS</h1> -->
+
+<!-- <div fxLayout="row" fxLayoutAlign="start start">
     <mat-card class="use">
         <img style="margin-top:1%" class="logo" src="../../../assets/images/bike logo.png">
         <h5 style="text-align:center;margin-top:1%">BOOK SERVICE</h5>
@@ -33,14 +82,14 @@
         <img style="margin-top:1%" class="logo" src="../../../assets/images/freeDrop2.jpg">
         <h5 style="text-align:center;margin-top:1%">FREE DROP</h5>
        </mat-card>     
-</div>
+</div> -->
 <div fxLayout="column" fxLayoutAlign="start stretch">
     <div fxLayout="column" fxLayoutAlign="start start">
-        <div fxLayout="row" fxLayoutAlign="end end">
+        <div fxLayout="row" fxLayoutAlign="center center">
             <mat-card class="contain">
                 <form [formGroup]="form">
                     <mat-card-content>
-                        <mat-form-field style="width:40%;margin-left:3%;">
+                        <mat-form-field style="width:40%;margin-left:3%;cursor: pointer;" appearance="outline">
                             <mat-label>Select Location</mat-label>
                             <mat-select formControlName="location">
                                 <mat-option *ngFor="let loc of location" [value]="loc">
@@ -48,13 +97,13 @@
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;">
+                        <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;" appearance="outline">
                             <mat-label>Service Date</mat-label>
                             <input matInput [matDatepicker]="date" [min]="currentDate" formControlName="PickUpdate">
                             <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
                             <mat-datepicker #date></mat-datepicker>
                         </mat-form-field>
-                        <mat-form-field style="width:40%;margin-left: 3%;">
+                        <mat-form-field style="width:40%;margin-left: 3%;cursor: pointer;" appearance="outline">
                             <mat-label>Select Bike</mat-label>
                             <mat-select formControlName="bikeName">
                                 <mat-option *ngFor="let bike of bikes" [value]="bike">
@@ -62,11 +111,11 @@
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;">
+                        <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;" appearance="outline">
                             <mat-label>Bike Reg No </mat-label>
                             <input matInput type="text" formControlName="regNo">
                         </mat-form-field>
-                        <mat-form-field style="width:40%;margin-left: 3%;cursor: pointer;">
+                        <mat-form-field style="width:40%;margin-left: 3%;cursor: pointer;" appearance="outline">
                             <mat-label>Enter Mobile Number </mat-label>
                             <span matPrefix>+91 &nbsp;</span>
                             <input matInput type="text" formControlName="phonenumber" maxlength="10">
@@ -76,7 +125,7 @@
                                 </div>
                             </mat-error>
                         </mat-form-field>
-                        <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;">
+                        <mat-form-field style="width:40%;margin-left: 12%;cursor: pointer;" appearance="outline">
                             <mat-label>Bike CC </mat-label>
                             <mat-select formControlName="Bike_CC">
                                 <mat-option *ngFor="let Bike_cc of CC" [value]="Bike_cc">
@@ -84,7 +133,7 @@
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <mat-form-field class="form"  appearance="outline">
+                        <mat-form-field class="form" style="cursor: pointer;" appearance="outline">
                             <mat-label>ADDRESS</mat-label>
                             <textarea matInput type="text"  formControlName="Address">
                            </textarea>

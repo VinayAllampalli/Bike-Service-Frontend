@@ -1,15 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { environment } from "../environments/environment"
+import { environment } from "../environments/environment";
+
+function _window():any{
+  return _window;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class BackendService {
+  get nativeWindow():any{
+    return _window
+  }
 
   public UserDetails:any;
   public servicingList:any;
   public price:any;
+  public EngineOil:any;
+  public Battery:any;
+  public userId:any;
 
 
   constructor(private http: HttpClient) { }
@@ -30,9 +40,6 @@ export class BackendService {
   }
   getBikes(){
     return this.http.get(`${environment.base_url}/getBikes`);
-  }
-  getEngineOil(){
-    return this.http.get(`${environment.base_url}/getEngineOil`);
   }
   getBattery(){
     return this.http.get(`${environment.base_url}/getBattery`);
@@ -57,5 +64,14 @@ export class BackendService {
   }
   alldata(obj:any){
     return this.http.post(`${environment.base_url}/userBooking`, obj)
+  }
+  getEngineOil(){
+    return this.http.get(`${environment.base_url}/getEngineOil`);
+  }
+  getBookingdata(userID:any){
+    return this.http.get(`${environment.base_url}/getBookData/${userID}`);
+  }
+  contact(obj:any){
+    return this.http.post(`${environment.base_url}/contactUs`, obj)
   }
 }

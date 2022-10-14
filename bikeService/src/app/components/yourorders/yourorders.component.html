@@ -1,0 +1,50 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    
+    <table mat-table  [dataSource]="dataSource" class="table">
+      <ng-container matColumnDef="BikeName">
+        <th mat-header-cell *matHeaderCellDef> BikeName </th>
+        <td mat-cell *matCellDef="let element"> {{element.userDetails.bikeName.bikeName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Reg No">
+        <th mat-header-cell *matHeaderCellDef> Reg No</th>
+        <td mat-cell *matCellDef="let element" style="margin-top:10%"> {{element.userDetails.regNo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Order Date">
+        <th mat-header-cell *matHeaderCellDef> Order Date</th>
+        <td mat-cell *matCellDef="let element" > {{element.userDetails.PickUpdate | date: 'd-MMM-y'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Phone No">
+        <th mat-header-cell *matHeaderCellDef> Phone No</th>
+        <td mat-cell *matCellDef="let element"> {{element.userDetails.phonenumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Selected Service">
+        <th mat-header-cell *matHeaderCellDef> Selected Service</th>
+        <td mat-cell *matCellDef="let element"> {{element.serviceList}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Address">
+        <th mat-header-cell *matHeaderCellDef> Address</th>
+        <td mat-cell *matCellDef="let element"> {{element.userDetails.Address}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Amount">
+        <th mat-header-cell *matHeaderCellDef> Amount</th>
+        <td mat-cell *matCellDef="let element"> {{element.Amount}} /-</td>
+      </ng-container>
+
+      
+      <tr  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <div *ngIf="dataSource?.length == 0" style="text-align: center; padding: 31px;">
+            <div style="text-align: center;font-size:20px"><b> NO RESULTS FOUND</b></div>
+            <img style="padding: 31px;" src="../../../assets/images/nodata.png ">
+          </div>
+    </table>
+    </div>
+
+    

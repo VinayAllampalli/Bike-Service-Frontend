@@ -8,12 +8,16 @@ import { FormArray, FormGroup, FormBuilder } from '@angular/forms';
 import { DailogueComponent } from '../dailogue/dailogue.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-select-service',
   templateUrl: './select-service.component.html',
   styleUrls: ['./select-service.component.css']
 })
 export class SelectServiceComponent implements OnInit {
+open() {
+throw new Error('Method not implemented.');
+}
 
   displayedColumns: string[] = ['Select', 'ServiceName', 'Description', 'Options', 'Price']
   services: any = []
@@ -31,19 +35,15 @@ export class SelectServiceComponent implements OnInit {
   battery: any
   list: any = [];
   service: any = [];
-  price:any=[];
+  price: any = [];
   form: any;
-  selectedRow:any;
-  servicePrice:any=[];
+  selectedRow: any;
+  servicePrice: any = [];
 
-
-
-
-  constructor(private backend: BackendService, 
-    private fb: FormBuilder, 
+  constructor(private backend: BackendService,
+    private fb: FormBuilder,
     public dialog: MatDialog,
-    public route:Router) {
-
+    public route: Router) {
   }
 
   ngOnInit(): void {
@@ -57,13 +57,13 @@ export class SelectServiceComponent implements OnInit {
 
   }
   // ngAfterViewInit() {
-    
+
   // }
   openDialog(): void {
     this.dialog.open(DailogueComponent, {
       width: '250px',
-      data:{
-        ServiceName :this.selectedRow.ServiceName,
+      data: {
+        ServiceName: this.selectedRow.ServiceName,
         Description: this.selectedRow.Description
       }
     });
@@ -71,7 +71,7 @@ export class SelectServiceComponent implements OnInit {
   formbuilder() {
     this.form = this.fb.group({
       EngineOil: [''],
-      Battery:['']
+      Battery: ['']
     })
   }
 
@@ -80,7 +80,7 @@ export class SelectServiceComponent implements OnInit {
       console.log("--->", res)
       this.companyArr = res.data
       console.log(this.companyArr["ServiceName"])
-      for(let x of this.companyArr){
+      for (let x of this.companyArr) {
         console.log(x.ServiceName)
       }
       this.companyArr = new MatTableDataSource(this.companyArr);
@@ -104,19 +104,21 @@ export class SelectServiceComponent implements OnInit {
     this.selection.selected.forEach((res: any) =>
       //  console.log(res.ServiceName))
       this.list.push(res))
+      console.log("---->",this.list)
+      console.log("---->",this.form)
     for (let list of this.list) {
       // this.servicePrice.push(`${list.ServiceName} - ${list.Price}`)
       this.service.push(list.ServiceName)
       this.price.push(list.Price)
       localStorage.setItem("Values", this.service)
-      localStorage.setItem("price",this.price)
-   
-      // localStorage.setItem("services",this.servicePrice)
-      // console.log("---->", this.service)
-      this.route.navigate(["/header/invoice"])
-    }
-
+      localStorage.setItem("price", this.price)
+      localStorage.setItem("engineoil",this.form.value.EngineOil.EngineOilName)
+      localStorage.setItem("engineoilPrice",this.form.value.EngineOil.EngineOilPrice)
+      localStorage.setItem("battery",this.form.value.Battery.BatteryName)
+      localStorage.setItem("batteryPrice",this.form.value.Battery.BatteryPrice)   
   }
+  this.route.navigate(["/header/invoice"])
+}
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.companyArr.filter = filterValue.trim().toLowerCase();
@@ -125,11 +127,10 @@ export class SelectServiceComponent implements OnInit {
   clear() {
     this.searchedText = '';
   }
+  
   selected(row: any) {
-     this.selectedRow = row
-     console.log(this.selectedRow)
-   
+    this.selectedRow = row
+    console.log(this.selectedRow)
+
   }
-
-
 }

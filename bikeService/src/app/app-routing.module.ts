@@ -2,15 +2,19 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { AllFormsComponent } from './components/all-forms/all-forms.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { DailogueComponent } from './components/dailogue/dailogue.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
 import { LoginComponent } from './components/login/login.component';
+import { MapsComponent } from './components/maps/maps.component';
+import { PaymentComponent } from './components/payment/payment.component';
 import { SelectServiceComponent } from './components/select-service/select-service.component';
 import { ServicingListComponent } from './components/servicing-list/servicing-list.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { YourordersComponent } from './components/yourorders/yourorders.component';
 import { CourselComponent } from './coursel/coursel.component';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -76,7 +80,27 @@ const routes: Routes = [
         component:DailogueComponent,
         canActivate:[AuthGuard]
       },
-      
+      {
+        path:'orders',
+        component:YourordersComponent,
+        canActivate:[AuthGuard]
+      },
+      {
+        path:'ContactUs',
+        component:ContactUsComponent,
+        canActivate:[AuthGuard]
+      },
+      {
+        path:"maps",
+        component:MapsComponent,
+        canActivate:[AuthGuard]
+      },
+      {
+        path:"payment",
+        component:PaymentComponent,
+        canActivate:[AuthGuard]
+
+      }
   ]
 },
 {

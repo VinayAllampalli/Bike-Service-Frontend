@@ -27,6 +27,11 @@ import { DailogueComponent } from './components/dailogue/dailogue.component';
 import { CourselComponent } from './coursel/coursel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatStepperModule} from '@angular/material/stepper';
+import { YourordersComponent } from './components/yourorders/yourorders.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { MapsComponent } from './components/maps/maps.component';
+import {NgxPrintModule} from 'ngx-print';
+import { PaymentComponent } from './components/payment/payment.component';
 
 
 
@@ -82,7 +87,11 @@ const ngxUiLoaderConfig:NgxUiLoaderConfig =
     AllFormsComponent,
     SelectServiceComponent,
     DailogueComponent,
-    CourselComponent
+    CourselComponent,
+    YourordersComponent,
+    ContactUsComponent,
+    MapsComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,    
@@ -99,6 +108,7 @@ const ngxUiLoaderConfig:NgxUiLoaderConfig =
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgbModule,
     MatStepperModule,
+    NgxPrintModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [BackendService,DatePipe],

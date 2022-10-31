@@ -4,8 +4,11 @@
         <div fxLayout="column" fxLayoutAlign="end end">
             <button mat-button printSectionId="print-section" ngxPrint style="background-color:#6CB33F;color:white">Print</button>
             </div>
+            <div fxLayout="column" fxLayoutAlign="end end">
+                <button mat-button (click)="makePdf()" style="background-color:#3f64b3;color:white">Download</button>
+                </div>
       <div id="print-section">
-        <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayout="column" fxLayoutAlign="center center" id="content" #content>
             <mat-card style="width:80%;border:2px solid;border-color:#6CB33F;">
                 <h1 style="text-align:center">Your Service Order Details </h1>
                 <hr>

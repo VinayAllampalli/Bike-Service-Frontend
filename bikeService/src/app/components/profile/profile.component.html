@@ -1,0 +1,34 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+   
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false" style="margin-top:100px;border:2px solid;border-color:#6CB33F;">
+<mat-expansion-panel-header>
+    
+<!-- <mat-panel-title>
+Self aware panel
+</mat-panel-title> -->
+<mat-panel-description style="width:100%">
+Click to {{panelOpenState ? 'closed Profile':'open Profile' }}
+</mat-panel-description>
+</mat-expansion-panel-header>
+
+<div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-30 col-form-label"> &nbsp;&nbsp; UserName </label>
+    <div class="col-sm-30">
+      <input type="text" readonly class="form-control" id="staticEmail" value={{name}}>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-30 col-form-label"> &nbsp;&nbsp;  Email </label>
+    <div class="col-sm-30">
+      <input type="text" readonly class="form-control" id="staticEmail" value={{email}}>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end end">
+    <button mat-raised-button color="primary" style="margin-top:2%;" (click)="edit()"><mat-icon>edit</mat-icon> &nbsp; Edit</button>
+</div>
+</mat-expansion-panel>
+</mat-accordion>
+    </div>

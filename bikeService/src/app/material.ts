@@ -21,6 +21,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatRadioModule,
     MatPaginatorModule,
     MatTooltipModule,
+    MatExpansionModule
   
   ]
 

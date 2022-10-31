@@ -1,9 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener,ElementRef, ViewChild} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { BackendService } from 'src/app/backend.service';
 import { DatePipe } from '@angular/common';
 import { Router} from '@angular/router';
+import jsPDF from 'jspdf';
 declare var Razorpay:any;
 
 
@@ -49,6 +50,7 @@ export class InvoiceComponent implements OnInit {
   error=""
   message:string="";
   Amount:any;
+  @ViewChild('content', { static: false }) el!: ElementRef;
 
 
   constructor(private fb: FormBuilder, public backend: BackendService, public datepipe: DatePipe,public route:Router) { }
@@ -159,7 +161,7 @@ export class InvoiceComponent implements OnInit {
 
     "email": localStorage.getItem("email"),
 
-    "contact": this.backend.UserDetails.phonenumber
+    "contact": ""
 
     },
 
@@ -188,7 +190,7 @@ export class InvoiceComponent implements OnInit {
 
       this.options.prefill.email = localStorage.getItem("email");
 
-      this.options.prefill.contact = this.backend.UserDetails.phonenumber;
+      this.options.prefill.contact = "7093116069";
 
       var rzp1 = new Razorpay(this.options);
 
@@ -229,7 +231,16 @@ export class InvoiceComponent implements OnInit {
   Cancel(){
     this.route.navigate(["/header/dashboard"])
   }
-
+  makePdf() {
+    let pdf = new jsPDF({
+      orientation:"portrait"
+    })
+    pdf.html(this.el.nativeElement, {
+      callback: (pdf) => {
+        pdf.save("a4.pdf")
+      }
+    })
+  }
 
 }
 

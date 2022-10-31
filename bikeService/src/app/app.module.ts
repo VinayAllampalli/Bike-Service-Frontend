@@ -32,6 +32,9 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { MapsComponent } from './components/maps/maps.component';
 import {NgxPrintModule} from 'ngx-print';
 import { PaymentComponent } from './components/payment/payment.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { PushNotificationComponent } from './components/push-notification/push-notification.component';
 
 
 
@@ -92,6 +95,9 @@ const ngxUiLoaderConfig:NgxUiLoaderConfig =
     ContactUsComponent,
     MapsComponent,
     PaymentComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    PushNotificationComponent,
   ],
   imports: [
     BrowserModule,    

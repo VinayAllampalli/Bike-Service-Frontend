@@ -5,12 +5,15 @@ import { AllFormsComponent } from './components/all-forms/all-forms.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { DailogueComponent } from './components/dailogue/dailogue.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
 import { LoginComponent } from './components/login/login.component';
 import { MapsComponent } from './components/maps/maps.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { PushNotificationComponent } from './components/push-notification/push-notification.component';
 import { SelectServiceComponent } from './components/select-service/select-service.component';
 import { ServicingListComponent } from './components/servicing-list/servicing-list.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -100,6 +103,21 @@ const routes: Routes = [
         component:PaymentComponent,
         canActivate:[AuthGuard]
 
+      },
+      {
+        path:"profile",
+        component:ProfileComponent,
+        canActivate:[AuthGuard]
+      },
+      {
+        path:"editProfile",
+        component:EditProfileComponent,
+        canActivate:[AuthGuard]
+      },
+      {
+        path:"pushNotification",
+        component:PushNotificationComponent,
+        canActivate:[AuthGuard]
       }
   ]
 },

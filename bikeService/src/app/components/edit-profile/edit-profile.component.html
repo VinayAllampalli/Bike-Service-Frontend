@@ -38,7 +38,12 @@
             <!-- <mat-error *ngIf="Cpassword.errors.confirmedValidator">Password and Confirm Password must be match.</mat-error> -->
           </mat-form-field>
 
-      
+          
+            <!-- <input class="pointer"  type="file" formControlName="file" > -->
+             <label for="formFileMultiple" class="form-label">Image Upload</label>
+             <input class="form-control" type="file" id="formFileMultiple" formControlName="file" multiple>   
+            <!-- <mat-error *ngIf="Cpassword.errors.confirmedValidator">Password and Confirm Password must be match.</mat-error> -->
+         
       </mat-card-content>
 
      

@@ -22,6 +22,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatRadioModule,
     MatPaginatorModule,
     MatTooltipModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatBadgeModule
   
   ]
 

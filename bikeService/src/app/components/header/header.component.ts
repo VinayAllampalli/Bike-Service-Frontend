@@ -10,10 +10,12 @@ export class HeaderComponent implements OnInit {
   name:any;
   navToggle: boolean = true;
   isShowing = true;
+  image:any;
   constructor(public route: Router) { }
 
   ngOnInit(): void {
     this.name = localStorage.getItem('username');
+    this.image=localStorage.getItem('image')
   }
   logout() {
     this.route.navigate(['/login']);

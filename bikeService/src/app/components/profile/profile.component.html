@@ -12,6 +12,9 @@ Self aware panel
 Click to {{panelOpenState ? 'closed Profile':'open Profile' }}
 </mat-panel-description>
 </mat-expansion-panel-header>
+<div>
+  <img class="circle" src= "{{image}}">
+  </div>
 
 <div class="mb-3 row">
     <label for="staticEmail" class="col-sm-30 col-form-label"> &nbsp;&nbsp; UserName </label>
@@ -21,11 +24,13 @@ Click to {{panelOpenState ? 'closed Profile':'open Profile' }}
   </div>
 
   <div class="mb-3 row">
-    <label for="staticEmail" class="col-sm-30 col-form-label"> &nbsp;&nbsp;  Email </label>
+    <label for="staticEmail" class="col-sm-30 col-form-label"> &nbsp;&nbsp; Email </label>
     <div class="col-sm-30">
       <input type="text" readonly class="form-control" id="staticEmail" value={{email}}>
     </div>
   </div>
+
+  
   <div fxLayout="row" fxLayoutAlign="end end">
     <button mat-raised-button color="primary" style="margin-top:2%;" (click)="edit()"><mat-icon>edit</mat-icon> &nbsp; Edit</button>
 </div>

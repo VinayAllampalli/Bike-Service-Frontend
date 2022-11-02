@@ -1,11 +1,8 @@
-
   <mat-sidenav-container class="sidenav-container reg">
     <mat-sidenav  #drawer mode="side" class="sidenav" fixedInViewport="true">
       <mat-divider></mat-divider>
       <img style="margin-top:1%" class="logo" src="../../../assets/images/bike logo.png">
-      <span class="vin"></span>
-
-  
+      <span class="vin"></span>  
         <mat-nav-list class="nav-lis" >
           <div class="nav-item">
             <a class="nav-link" mat-list-item [routerLink]="['dashboard']" [routerLinkActive]="['is-active']">
@@ -34,7 +31,6 @@
           <div class="nav-item">
             <a class="nav-link" mat-list-item [routerLink]="['allforms']" [routerLinkActive]="['is-active']">
               <mat-icon class="nav-icon">file_copy</mat-icon>
-              
               ALL FORMS
             </a>
           </div>
@@ -50,7 +46,7 @@
         <mat-nav-list class="nav-list">
           <div class="nav-item">
             <a class="nav-link" mat-list-item [routerLink]="['profile']" [routerLinkActive]="['is-active']">
-              <mat-icon  class="nav-icon"> person_pin</mat-icon>p
+              <mat-icon  class="nav-icon"> person_pin</mat-icon>
               Profile
             </a>
           </div>
@@ -64,8 +60,8 @@
         <!-- <img class="logo" src="../../../assets/images/bike logo.png">&nbsp;&nbsp;&nbsp; -->
         <span>BIKE LAB</span>
         <span class="example-spacer"></span>
-      
         <mat-icon>person</mat-icon>
+        <!-- <img class="circle" src= "{{image}}"> -->
         {{name}}&nbsp;&nbsp;&nbsp;&nbsp;
 
           <mat-icon (click)="logout()" style="cursor:pointer">logout</mat-icon>

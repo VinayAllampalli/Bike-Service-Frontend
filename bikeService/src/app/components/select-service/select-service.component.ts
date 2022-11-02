@@ -39,6 +39,7 @@ throw new Error('Method not implemented.');
   form: any;
   selectedRow: any;
   servicePrice: any = [];
+  badge:any;
 
   constructor(private backend: BackendService,
     private fb: FormBuilder,
@@ -78,8 +79,9 @@ throw new Error('Method not implemented.');
   bikeget() {
     this.backend.getService().subscribe((res: any) => {
       console.log("--->", res)
+      this.badge = res.data.length
       this.companyArr = res.data
-      console.log(this.companyArr["ServiceName"])
+      // console.log(this.companyArr["ServiceName"])
       for (let x of this.companyArr) {
         console.log(x.ServiceName)
       }

@@ -32,6 +32,7 @@ export class EditProfileComponent implements OnInit,OnDestroy{
       username: ['', [Validators.required, Validators.minLength(4)]],
       password: ['',[Validators.required,Validators.pattern('(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\\\\]])[A-Za-z0-9d$@].{7,}'),],],
       Cpassword:['',[Validators.required,Validators.pattern('(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\\\\]])[A-Za-z0-9d$@].{7,}'),],],
+      file:['',[Validators.required]]
       },{ 
         validator: ConfirmedValidator('password', 'Cpassword')
       })
@@ -44,6 +45,9 @@ export class EditProfileComponent implements OnInit,OnDestroy{
   }
   get Cpassword(){
     return this.form.get('Cpassword');
+  }
+  get file(){
+    return this.form.get('file');
   }
   get f(){
     return this.form.controls;
@@ -60,6 +64,7 @@ export class EditProfileComponent implements OnInit,OnDestroy{
     obj.username = temp.username;
     obj.email = temp.email;
     obj.password = temp.password;
+    obj.file = temp.file
     this.backend.updateProfile(this.userId,obj).subscribe(async(res:any) => {
       
       console.log("+++++",res)

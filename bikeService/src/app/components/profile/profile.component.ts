@@ -10,12 +10,19 @@ export class ProfileComponent implements OnInit {
   panelOpenState = false;
   name:any;
   email:any;
+  image:any;
+  imageBinary:any;
 
-  constructor(public dialog: MatDialog,) { }
+  constructor(public dialog: MatDialog) {}
+   
+
 
   ngOnInit(): void {
     this.name=localStorage.getItem("username");
-    this.email=localStorage.getItem("email")
+    this.email=localStorage.getItem("email");
+    this.image=localStorage.getItem('image')
+    console.log(this.image)
+    
   }
 edit(){
   this.dialog.open(EditProfileComponent, {

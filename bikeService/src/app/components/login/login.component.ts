@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   log: any;
   errMessage: any;
   getUsers:any;
+  imageBinary:any;
 
 
   constructor( public router: Router,
@@ -28,7 +29,9 @@ export class LoginComponent implements OnInit {
     private backend: BackendService,
     private arouter: ActivatedRoute,
     public snackbar: MatSnackBar,
-    private ngxService:NgxUiLoaderService) { }
+    private ngxService:NgxUiLoaderService) { 
+  
+    }
 
   ngOnInit(): void {
     this.formbuilder()
@@ -93,6 +96,8 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('email', user.email)
         localStorage.setItem('username', user.username)
         localStorage.setItem('userId',user.userId)
+        let image =localStorage.setItem("image",user.file)
+        console.log(image)
         this.router.navigate(["/header"]);
         // this.ngxService.stop();
               } 

@@ -16,6 +16,9 @@ export class EditProfileComponent implements OnInit,OnDestroy{
   form:any;
   userId:any;
   validate: any;
+  filename: any;
+  imageSrc:any;
+  images:any;
 
   constructor( public router: Router,
     private fb: FormBuilder,
@@ -32,7 +35,7 @@ export class EditProfileComponent implements OnInit,OnDestroy{
       username: ['', [Validators.required, Validators.minLength(4)]],
       password: ['',[Validators.required,Validators.pattern('(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\\\\]])[A-Za-z0-9d$@].{7,}'),],],
       Cpassword:['',[Validators.required,Validators.pattern('(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\\\\]])[A-Za-z0-9d$@].{7,}'),],],
-      file:['',[Validators.required]]
+      // file:['',[Validators.required]]
       },{ 
         validator: ConfirmedValidator('password', 'Cpassword')
       })
@@ -46,28 +49,57 @@ export class EditProfileComponent implements OnInit,OnDestroy{
   get Cpassword(){
     return this.form.get('Cpassword');
   }
-  get file(){
-    return this.form.get('file');
-  }
-  get f(){
-    return this.form.controls;
-
-  }
+  // get file(){
+  //   return this.form.get('file');
+  // }
   
+  image!: File;
+fileUpload(event: any) {
+
+  this.image = event.target.files[0];
+  const reader = new FileReader()
+  reader.readAsDataURL(this.image)
+  console.log(this.image)
+  reader.onload = () =>{
+    this.imageSrc = reader.result as string;
+    this.filename = this.image.name
+    console.log("......",this.filename)
+  }
+
+}
+selectImage(event:any) {
+  if (event.target.files.length > 0) {
+    const file = event.target.files[0];
+    this.images = file;
+    console.log("--->",this.images.name)
+  }
+}
    
-  updateform(){
-    if (!this.form.valid) {
-      return;
-    }
-    let temp = this.form.value;
-    let obj: any = {};
-    obj.username = temp.username;
-    obj.email = temp.email;
-    obj.password = temp.password;
-    obj.file = temp.file
-    this.backend.updateProfile(this.userId,obj).subscribe(async(res:any) => {
-      
-      console.log("+++++",res)
+onSubmit(){
+  const formData = new FormData();
+  formData.append('file', this.images);
+  formData.append("username",this.form.get('username')?.value)
+  formData.append("password",this.form.get('password')?.value)
+
+   
+
+
+    // let temp = this.form.value;
+
+    // let obj: any = {};
+    // obj.username = temp.username;
+    // obj.password = temp.password;
+  
+    // console.log("---->",obj)
+   
+// var formData:any = new FormData();
+
+// // formData.append("file",this.filename)
+// formData.append("username",this.form.get('username')?.value)
+// formData.append("username",this.form.get('password')?.value)
+// console.log('-----------------------------------', formData);
+    
+    this.backend.updateProfile(formData,this.userId).subscribe(async(res:any) => {
       const use = res
       this.validate = use.message
       if (use.success == true) {
@@ -77,7 +109,7 @@ export class EditProfileComponent implements OnInit,OnDestroy{
                   }); 
                 }
               })
-              this.router.navigate(["/login"])
+              // this.router.navigate(["/login"])
 
   }
   ngOnDestroy(): void {

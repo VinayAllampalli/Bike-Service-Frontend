@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
+import { FileUploadComponent } from '../file-upload/file-upload.component';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,9 +15,7 @@ export class ProfileComponent implements OnInit {
   imageBinary:any;
 
   constructor(public dialog: MatDialog) {}
-   
-
-
+  
   ngOnInit(): void {
     this.name=localStorage.getItem("username");
     this.email=localStorage.getItem("email");
@@ -27,6 +26,11 @@ export class ProfileComponent implements OnInit {
 edit(){
   this.dialog.open(EditProfileComponent, {
     width: '500px',
+})
+}
+profilePic(){
+  this.dialog.open(FileUploadComponent, {
+    width: '400px',
 })
 }
 }

@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SelectServiceComponent } from '../select-service/select-service.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { SelectServiceComponent } from '../select-service/select-service.compone
 export class DailogueComponent implements OnInit {
 receviedRow:any
   constructor(
+    public router:Router, 
     public dialogRef:MatDialogRef<SelectServiceComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any
   ) { 
@@ -19,5 +21,7 @@ receviedRow:any
 
   ngOnInit(): void {
   }
-
+Ok(){
+  this.router.navigate(["header/selectService"])
+}
 }

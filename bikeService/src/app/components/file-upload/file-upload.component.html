@@ -1,0 +1,16 @@
+<div style="text-align: center;margin-top: 2%;">
+    <mat-card style="border:2px solid;border-color:#6CB33F;">
+    <h1 style="font-style: italic;font-weight: 600;color: #6CB33F;text-align: center;">UPLOAD PROFILE PICTURE</h1>
+      <div fxlayout="column" fxLayoutAlign="center center"> 
+        <input type="file" name="image" (change)="selectImage($event)" />
+      </div>
+      <br>
+      <div>      
+        <button style="background-color: #5cb85c;width: 30%;color:white" class="uploadbutton" mat-button type="submit" (click)="onSubmit()">
+            Upload
+            <mat-icon class="icon_size">vertical_align_top</mat-icon>
+          </button>&nbsp;
+      </div>
+      </mat-card>
+    
+  </div>

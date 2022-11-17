@@ -62,7 +62,7 @@ throw new Error('Method not implemented.');
   // }
   openDialog(): void {
     this.dialog.open(DailogueComponent, {
-      width: '250px',
+      width: '500px',
       data: {
         ServiceName: this.selectedRow.ServiceName,
         Description: this.selectedRow.Description

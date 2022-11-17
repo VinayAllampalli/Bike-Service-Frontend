@@ -35,6 +35,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { PushNotificationComponent } from './components/push-notification/push-notification.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 
 
@@ -98,6 +99,7 @@ const ngxUiLoaderConfig:NgxUiLoaderConfig =
     ProfileComponent,
     EditProfileComponent,
     PushNotificationComponent,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,    

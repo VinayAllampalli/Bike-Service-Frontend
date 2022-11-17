@@ -74,7 +74,14 @@ export class BackendService {
   contact(obj:any){
     return this.http.post(`${environment.base_url}/contactUs`, obj)
   }
-  updateProfile(userId:any,obj:any){
-    return this.http.put(`${environment.base_url}/UpdateProfile/${userId}`,obj);
+  updateProfile(formData:any,userId:any){
+    console.log("backend updated hit")
+    return this.http.put(`${environment.base_url}/UpdateProfile/${userId}`,formData);
   }
+  
+  fileupload(formData:any,userId:any){
+    console.log(userId)
+    return this.http.put(`${environment.base_url}/fileUpload/${userId}`,formData);
+  }
+
 }

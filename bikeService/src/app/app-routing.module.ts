@@ -6,6 +6,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { DailogueComponent } from './components/dailogue/dailogue.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
@@ -117,6 +119,11 @@ const routes: Routes = [
       {
         path:"pushNotification",
         component:PushNotificationComponent,
+        canActivate:[AuthGuard]
+      },
+      {
+        path:"fileupload",
+        component:FileUploadComponent,
         canActivate:[AuthGuard]
       }
   ]

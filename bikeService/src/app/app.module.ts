@@ -42,6 +42,8 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
 
 
 
+
+
 const ngxUiLoaderConfig:NgxUiLoaderConfig =
 {
   "bgsColor": "red",

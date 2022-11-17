@@ -24,12 +24,19 @@ table {
     color:white ;
     background-color: #848cc9;
     font-style: italic;
-    font-weight: 500;   
-    margin-top: 10%;
+    font-weight: 500; 
+    padding-bottom: 15px;  
+   
    
   }
 .feild{
  
   width: 200px;
 }
- 
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding-top: 15px;
+    text-align: center;
+}
+
+

@@ -1,8 +1,10 @@
-<div fxLayout="column" fxLayouAlign="center center">
+<div fxLayout="column" fxLayouAlign="center center"> 
+  <h1 style="font-style: italic;font-weight: 600;color: #6CB33F;text-align: center;">UPDATE PROFILE</h1>
+ 
     <mat-card
-    style="width:100%; margin-top:10%; margin-bottom: 15%; text-align: center;">
+    style="width:100%; margin-top:5%; margin-bottom: 15%; text-align: center;border:2px solid;border-color:#6CB33F;">
     
-    <form [formGroup]="form" (ngSubmit)="updateform()">
+    <form [formGroup]="form">
       <mat-card-content>
         <mat-form-field style="width:70%;">
           <mat-label for="username">Username:</mat-label>
@@ -36,19 +38,22 @@
              
             </mat-error>
             <!-- <mat-error *ngIf="Cpassword.errors.confirmedValidator">Password and Confirm Password must be match.</mat-error> -->
-          </mat-form-field>
-
-          
-            <!-- <input class="pointer"  type="file" formControlName="file" > -->
-             <label for="formFileMultiple" class="form-label">Image Upload</label>
-             <input class="form-control" type="file" id="formFileMultiple" formControlName="file" multiple>   
-            <!-- <mat-error *ngIf="Cpassword.errors.confirmedValidator">Password and Confirm Password must be match.</mat-error> -->
-         
+          </mat-form-field>          
+                  <div>
+                    <h4 style="margin-right:35%;">Upload Profile Picture</h4>
+                  <input type="file" name="image" (change)="selectImage($event)" />
+                </div>
+                <br>
+                <div>      
+                  <!-- <button style="background-color: #5cb85c;width: 30%;color:white" class="uploadbutton" mat-button type="submit" (click)="onSubmit()">Upload
+                      <mat-icon class="icon_size">vertical_align_top</mat-icon>
+                    </button>&nbsp; -->
+                </div>
       </mat-card-content>
 
      
-       <button mat-raised-button mat-dialog-close style="background-color: #5cb85c;color:white" class="btn" (click)="updateform()">Update</button>&nbsp;&nbsp;&nbsp;
-
+       <button mat-raised-button mat-dialog-close style="background-color: #5cb85c;color:white" class="btn" (click)="onSubmit()">Update</button>&nbsp;&nbsp;&nbsp;
+       
        <button mat-raised-button mat-dialog-close style="background-color: #b85c5c;color:white" class="btn" (click)="cancel()">Cancel</button>
     </form>
     </mat-card>
